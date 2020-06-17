@@ -20,4 +20,18 @@ describe("enhancer", () => {
         expect(item.durability).toBe(100);
         console.log({Item: item.name, Durability: item.durability})
     })
-})
+
+    test("succeed()", () => {
+
+        let item = {
+            name: "Blade of immortal steel",
+            durability: 0,
+            enhancement: 5
+        }
+
+        item = enhancer.succeed(item);
+
+        expect(item.enhancement).toBe(6);
+        console.log({Enhanced: item.enhancement})
+    })
+})//working
