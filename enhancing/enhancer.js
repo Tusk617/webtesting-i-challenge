@@ -26,7 +26,30 @@ function succeed(item) {
 }//working
 
 function fail(item) {
-  return { ...item };
+
+  item = {
+    name: item.name,
+    durability: item.durability,
+    enhancement: item.enhancement
+  };
+
+  if (item.enhancement < 15) {
+    let newDur = item.durability - 5;
+    item.durability = newDur;
+    return {...item}
+  } else if (item.enhancement === 15 || item.enhancement > 15) {
+      let newDur = item.durability - 10;
+      item.durability = newDur;
+      if (item.enhancement > 16) {
+        let newEnh = item.enhancement - 1;
+        item.enhancement = newEnh;
+        return {...item}
+      } else {
+      return {...item};
+  }
+}
+
+  // return { ...item };
 }
 
 function repair(item) {

@@ -34,4 +34,19 @@ describe("enhancer", () => {
         expect(item.enhancement).toBe(20);
         console.log({Enhanced: item.enhancement})
     })
+
+    test("fail()", () => {
+        let item = {
+            name: "Blade of immortal steel",
+            durability: 85,
+            enhancement: 17
+        };
+
+        item = enhancer.fail(item);
+
+        expect(item.durability).toBe(75);
+        expect(item.enhancement).toBe(16);
+        console.log({Failure: item.durability})
+        console.log({MajorFail: item.enhancement})
+    })
 })//working
