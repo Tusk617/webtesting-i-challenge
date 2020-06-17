@@ -1,2 +1,6 @@
 const enhancer = require('./enhancer.js');
-// test away!
+
+
+test("tests if jest is working", () => {
+    expect(true).toBe(true);
+})
