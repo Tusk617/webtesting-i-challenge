@@ -14,12 +14,12 @@ function succeed(item) {
   };
 
   // this if statement prevents the item to be enhanced beyond 20.
-  if (item.enhancement > 20 || item.enhancement === 20) {
+  if (item.enhancement >= 20) {
     let revertEnh = 20;
     item.enhancement = revertEnh;
     return {...item};
   } else {
-    let newEnh = item.enhancement + 1;
+     item.enhancement += 1;
     item.enhancement = newEnh;
     return {...item}
   }
@@ -37,7 +37,7 @@ function fail(item) {
     let newDur = item.durability - 5;
     item.durability = newDur;
     return {...item}
-  } else if (item.enhancement === 15 || item.enhancement > 15) {
+  } else if (item.enhancement >= 15) {
       let newDur = item.durability - 10;
       item.durability = newDur;
       if (item.enhancement > 16) {
